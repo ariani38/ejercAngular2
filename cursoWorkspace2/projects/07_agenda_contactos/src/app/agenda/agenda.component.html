@@ -5,7 +5,7 @@ Teléfono:<input type="text" [(ngModel)]="telefono"> <br><br>
 <button (click)="guardar()">Guardar</button>
 <button (click)="mostrar()">Mostrar</button> <br><br>
 
-//ngi=false la tabla no se ve
+ 
 <table border="1" *ngIf="visible">
   <tr>
     <th>Nombre</th>
@@ -13,11 +13,11 @@ Teléfono:<input type="text" [(ngModel)]="telefono"> <br><br>
     <th>Teléfono</th>
     <th>Borrar</th>
     </tr>
-    <tr *ngFor="let c of agenda">
+    <tr *ngFor="let c of agenda, let i=index">
       <td>{{c.nombre}}</td>
       <td>{{c.email}}</td>
       <td>{{c.telefono}}</td>
-      <td> <button (click)="eliminar()">Eliminar</button></td>
+      <td> <button (click)="eliminar(i)">Eliminar</button></td>
     </tr>
 </table>
 

@@ -31,7 +31,7 @@ mostrar():void{
 this.visible=!this.visible;
 
 }
-eliminar():void{
+eliminar(index:number):void{
   this.agenda.splice(index,1);
 }
 
