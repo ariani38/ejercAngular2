@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Contacto } from './model/Contacto';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,9 @@ nombre:string;
 email:string;
 telefono:string;
 agenda:Contacto[]=[];
-visible:boolean=false;//para usarlo después si queremos hacer visible o invisible
+visibleAgenda:boolean=false;//para usarlo después si queremos hacer visible o invisible
+agendaNueva:Contacto[]=[];
+visibleResult:boolean=false;
 
 guardar():void{
   //creamos un objeto Contacto, primero con los datos del contacto
@@ -28,11 +31,24 @@ this.agenda.push(c);
 
 mostrar():void{
 //si está false la pone a true y viceversa
-this.visible=!this.visible;
+this.visibleAgenda=!this.visibleAgenda;
 
 }
 eliminar(index:number):void{
   this.agenda.splice(index,1);
 }
 
+buscar():void{
+this.agendaNueva=this.agenda.filter((n)=>n.nombre===this.nombre
+                ||n.telefono===this.telefono
+               || n.email===this.email);
+
+  this.visibleResult=!this.visibleResult;
+
 }
+
+
+
+
+}
+

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Pagina } from './model/Pagina';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-buscador',
-  imports: [],
+  imports: [CommonModule,FormsModule],
   templateUrl: './buscador.component.html',
   styleUrl: './buscador.component.css'
 })
@@ -21,21 +23,21 @@ datos:Pagina[]=[
   new Pagina( "juegos", "http://www.game.es")
 ];
 visible:boolean=false;//para usarlo después si queremos hacer visible o invisible
-const temaElegido:string="";
-const resultados:Pagina[]=[];
-
+temaElegido:string="";
+ resultados:Pagina[]=[];
+//tematicas:string[]=[];
 
 //cuando damos al select debe mostrar las temáticas sin repetir
 //vuelvo a convertir en array para poder iterar en html
 cargarTematicas():string[]{
- const ctematicas= new Set( this.datos.map(n=>n.tematica));
-return  Array.from(ctematicas);
+ let ctematicas= new Set( this.datos.map(n=>n.tematica));
+ return Array.from(ctematicas);
 }
 
 //al seleccionar una temática debe dar como resultado las paginas con la temática
 buscar():void{
- this.resultados=this.datos.filter((n, temaElegido)=>n.tematica==this.temaElegido);
-
+ this.resultados=this.datos.filter(( n)=>n.tematica===this.temaElegido||"todas"===this.temaElegido);
+ this.visible=!this.visible;
 }
 
 
@@ -54,4 +56,3 @@ buscar():void{
 
 
 
-}
