@@ -1,0 +1,16 @@
+Introduce una temática
+
+<select [(ngModel)]="temaElegido">
+  <option value="todas">Todas</option>
+  <option *ngFor="let tematica of cargarTematicas()" [value]="tematica">
+    {{ tematica }}
+  </option>
+</select>
+<button (click)="buscar()">Buscar</button>
+<div *ngIf="visible">
+  <h2 *ngFor="let c of resultados">
+    <a [href]="c.direccion" target="_blank">{{ c.direccion }}</a>
+  </h2>
+</div>
+
+

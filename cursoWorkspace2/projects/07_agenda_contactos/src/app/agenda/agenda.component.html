@@ -1,23 +1,39 @@
-Introduce tus datos
+Agenda
 Nombre:<input type="text" [(ngModel)]="nombre"> <br><br>
 Email:<input type="text" [(ngModel)]="email"> <br><br>
 Teléfono:<input type="text" [(ngModel)]="telefono"> <br><br>
 <button (click)="guardar()">Guardar</button>
-<button (click)="mostrar()">Mostrar</button> <br><br>
+<button (click)="mostrar()">Mostrar</button>
+<button (click)="buscar()">Buscar</button><br><br>
 
-//ngi=false la tabla no se ve
-<table border="1" *ngIf="visible">
+
+<table border="1" *ngIf="visibleAgenda">
   <tr>
     <th>Nombre</th>
     <th>Email</th>
     <th>Teléfono</th>
     <th>Borrar</th>
     </tr>
-    <tr *ngFor="let c of agenda">
+    <tr *ngFor="let c of agenda; let i=index">
       <td>{{c.nombre}}</td>
       <td>{{c.email}}</td>
       <td>{{c.telefono}}</td>
-      <td> <button (click)="eliminar()">Eliminar</button></td>
+      <td> <button (click)="eliminar(i)">Eliminar</button></td>
+    </tr>
+</table>
+
+<table border="1" *ngIf="visibleResult">
+  <tr>
+    <th>Nombre</th>
+    <th>Email</th>
+    <th>Teléfono</th>
+
+    </tr>
+    <tr *ngFor="let c of agendaNueva; let i=index">
+      <td>{{c.nombre}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.telefono}}</td>
+
     </tr>
 </table>
 
