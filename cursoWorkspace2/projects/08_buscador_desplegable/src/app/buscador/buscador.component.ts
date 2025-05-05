@@ -24,8 +24,8 @@ datos:Pagina[]=[
 ];
 visible:boolean=false;//para usarlo después si queremos hacer visible o invisible
 temaElegido:string="";
- resultados:Pagina[]=[];
-//tematicas:string[]=[];
+resultados:Pagina[]=[];
+
 
 //cuando damos al select debe mostrar las temáticas sin repetir
 //vuelvo a convertir en array para poder iterar en html
@@ -36,11 +36,19 @@ cargarTematicas():string[]{
 
 //al seleccionar una temática debe dar como resultado las paginas con la temática
 buscar():void{
- this.resultados=this.datos.filter(( n)=>n.tematica===this.temaElegido||"todas"===this.temaElegido);
+ this.resultados=this.datos.filter(( n)=>n.tematica==this.temaElegido||"todas"==this.temaElegido);
  this.visible=!this.visible;
 }
 
 
+guardar():void{
+  //creamos un objeto Pagina, primero con los datos del contacto
+  //esto si ya en el model hicimos el contructor de la clase
+let c=new Pagina(this.tematica,this.direccion);
+//añadimos el contacto al array
+this.datos.push(c);
+
+}
 
 }
 

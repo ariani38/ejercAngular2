@@ -1,9 +1,15 @@
+<h1>Agregar Página</h1><br><br>
+Temática:<input type="text" [(ngModel)]="tematica"> <br><br>
+Dirección:<input type="text" [(ngModel)]="direccion"> <br><br>
+<button (click)="guardar()">Guardar</button><br><br><br>
+
 Introduce una temática
 
 <select [(ngModel)]="temaElegido">
   <option value="todas">Todas</option>
+
   <option *ngFor="let tematica of cargarTematicas()" [value]="tematica">
-    {{ tematica }}
+      {{ tematica }}
   </option>
 </select>
 <button (click)="buscar()">Buscar</button>
@@ -12,5 +18,6 @@ Introduce una temática
     <a [href]="c.direccion" target="_blank">{{ c.direccion }}</a>
   </h2>
 </div>
+
 
 

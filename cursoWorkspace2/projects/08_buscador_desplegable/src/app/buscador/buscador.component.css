@@ -1,0 +1,46 @@
+
+
+h1 {
+  background-color: rgb(235, 235, 235);
+  color: rgb(112, 107, 107);
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #fbfbfb;
+  border-radius: 5px;
+  background-color: #afa9a9;
+  color: #ffffff;
+  outline: none;
+  margin: 10px 0;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 10px #a4aeac;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b6aabc;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #b3c3bf;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #00ffcc;
+}
