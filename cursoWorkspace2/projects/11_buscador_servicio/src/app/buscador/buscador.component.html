@@ -1,0 +1,26 @@
+
+<h1>Buscador Página</h1><br><br>
+
+<button (click)="agregarPagina()">Agregar nueva Página</button><br>
+<div *ngIf="agregarVisible">
+Temática:<input type="text" [(ngModel)]="tematica"> <br><br>
+Dirección:<input type="text" [(ngModel)]="direccion"> <br><br>
+<button (click)="guardar()">Guardar</button><br><br><br>
+</div>
+
+Selecciona una temática
+
+<select [(ngModel)]="temaElegido" (change)="cargarTematicas()">
+  <option value="todas">Todas</option>
+
+  <option *ngFor="let t of tematicasArray" value="{{t}}">
+      {{ t }}
+  </option>
+</select>
+
+<button (click)="buscar()">Buscar</button>
+<div *ngIf="visible">
+  <h2 *ngFor="let c of resultados">
+    <a [href]="c.direccion" target="_blank">{{ c.direccion }}</a>
+  </h2>
+</div>
