@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './validacion.component.css'
 })
 export class ValidacionComponent {
-  usuarioValidar:string;
-  contrasenaValidar:string;
+usuarioValidar:string;
+contrasenaValidar:string;
 usuario:string;
 contrasena:string;
 email:string;
@@ -37,7 +37,7 @@ this.visible=!this.visible;
 }
 
 validar(){
-const cliente = this.clientes.validar(this.usuarioValidar,  this.contrasenaValidar);
+let cliente = this.clientes.validar(this.usuarioValidar,  this.contrasenaValidar);
 if (cliente) {
   alert("usuario válido");
 } else {
