@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Contacto } from '../model/Contacto';
-import { AgendaService } from '../service/AgendaService';
+
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AgendaService } from '../service/agenda.service';
 
 @Component({
   selector: 'app-agenda',
@@ -17,28 +18,24 @@ email:string;
 telefono:string;
 contactos:Contacto[];
 
-ageService:AgendaService;
 
-constructor(){
-  this.ageService=new AgendaService;
+constructor(private agenda:AgendaService){
+
 }
+
 guardar(){
 let contacto=new Contacto(this.nombre,this.email,this.telefono);
-this.ageService.guardar(contacto);
+this.agenda.guardar(contacto);
 
 }
-
 
 mostrar(){
-  this.contactos=this.ageService.recuperar();
+  this.contactos=this.agenda.recuperar();
 }
+
 eliminar(index:number):void{
-this.ageService.eliminar(index);
+this.agenda.eliminar(index);
 }
-
-
-
-
 
 
 }

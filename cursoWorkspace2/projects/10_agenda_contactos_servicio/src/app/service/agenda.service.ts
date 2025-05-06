@@ -1,6 +1,10 @@
-import { Contacto } from './../model/Contacto';
+import { Injectable } from '@angular/core';
+import { Contacto } from '../model/Contacto';
 
-export class AgendaService{
+@Injectable({
+  providedIn: 'root'
+})
+export class AgendaService {
   agenda:Contacto[]=[];
 
 
@@ -17,4 +21,7 @@ this.agenda.splice(index,1);
 
   }
 }
+
+
+
 
