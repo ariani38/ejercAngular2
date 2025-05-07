@@ -1,4 +1,4 @@
-body {
+/*body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   margin: 0;
@@ -15,9 +15,8 @@ input[type="text"] {
   font-size: 16px;
 }
 
-/* Button styles */
 button {
-  background-color: #4c89af; /* Green */
+  background-color: #4c89af;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   margin: 10px 5px;
@@ -29,10 +28,10 @@ button {
 }
 
 button:hover {
-  background-color: #1d381e; /* Darker green */
+  background-color: #1d381e;
 }
 
-/* Container for the form */
+
 div {
   background-color: #ffffff;
   padding: 20px;
@@ -42,5 +41,5 @@ div {
   margin: auto;
 }
 
-/* Table styles (if applicable) */
+  */
 

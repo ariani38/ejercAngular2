@@ -20,6 +20,7 @@ telefono:string;
 
 visible:boolean=false;
 
+//se crea un contructor de la clase Service para poder llamar a sus metodos
 
 constructor(private clientes:ClientesService){
 

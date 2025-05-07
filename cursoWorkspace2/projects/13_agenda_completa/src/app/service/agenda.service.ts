@@ -8,20 +8,42 @@ export class AgendaService {
   agenda:Contacto[]=[];
 
 
-  guardar(Contacto:Contacto):void{
+  guardar(Contacto:Contacto):boolean{
+    let c=this.agenda.some((n)=>n.email==Contacto.email);
+    if(c){
+      return false;
+    }else{
+      this.agenda.push(Contacto);
+      return true;
 
-    this.agenda.push(Contacto);
+    }
+
   }
 
   eliminar(index:number):void{
 this.agenda.splice(index,1);
   }
+
   recuperar():Contacto[]{
    return this.agenda;
 
   }
-  
-}
+
+  buscar(email:string):Contacto{
+    return this.agenda.find((n)=>n.email==email);
+
+   }
+
+   }
+
+
+
+
+ 
+
+
+
+
 
 
 
