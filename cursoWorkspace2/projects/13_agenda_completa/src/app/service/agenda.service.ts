@@ -7,15 +7,16 @@ import { Contacto } from '../model/Contacto';
 export class AgendaService {
   agenda:Contacto[]=[];
 
-
-  guardar(Contacto:Contacto):boolean{
-    let c=this.agenda.some((n)=>n.email==Contacto.email);
+  guardar(contacto:Contacto):boolean{
+    //llamamos a buscar para que nos de un contacto con ese email
+    //si no hay ninguno, guardamos y devolvemos true
+    //pero si encuentra uno, no guardamos y devolvemos false
+    let c=this.buscar(contacto.email);
     if(c){
       return false;
     }else{
-      this.agenda.push(Contacto);
+      this.agenda.push(contacto);
       return true;
-
     }
 
   }
@@ -25,12 +26,14 @@ this.agenda.splice(index,1);
   }
 
   recuperar():Contacto[]{
+    console.log('Método recuperar llamado');
+ 
    return this.agenda;
 
   }
 
-  buscar(email:string):Contacto{
-    return this.agenda.find((n)=>n.email==email);
+  buscar(email:string):Contacto {
+    return this.agenda.find((n)=>n.email==email) ;
 
    }
 
@@ -39,7 +42,7 @@ this.agenda.splice(index,1);
 
 
 
- 
+
 
 
 

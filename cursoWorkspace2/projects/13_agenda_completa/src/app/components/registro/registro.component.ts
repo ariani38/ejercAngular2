@@ -22,10 +22,11 @@ constructor(private agenda:AgendaService){
 
 guardar(){
 let contacto=new Contacto(this.nombre,this.email,this.telefono);
-if (this.agenda.guardar(contacto)==true){
-  alert("Este email ya ha sido utilizado")
+if (this.agenda.guardar(contacto)==false){
+  alert("Este email ya ha sido utilizado");
 }else{
-  alert("Contacto guardado")
+  alert("Contacto guardado");
+  
 }
 
 

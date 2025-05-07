@@ -19,8 +19,9 @@ constructor(private agenda:AgendaService){
 
 }
 
-buscar(){
+buscar():void{
 this.contactoEncontrado=this.agenda.buscar(this.email);
+
 }
 
  }
