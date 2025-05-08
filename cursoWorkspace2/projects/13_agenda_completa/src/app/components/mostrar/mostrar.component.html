@@ -1,16 +1,21 @@
 <div class="container">
-<table  *ngIf="agendaContactos.length>0">
+   
+    <table class="table table-striped"*ngIf="agendaContactos.length>0">
+    <thead>
   <tr>
     <th>Nombre</th>
     <th>Email</th>
     <th>Teléfono</th>
     <th>Borrar</th>
     </tr>
+  </thead>
+  <tbody>
     <tr *ngFor="let c of agendaContactos; let index=index">
       <td>{{c.nombre}}</td>
       <td>{{c.email}}</td>
       <td>{{c.telefono}}</td>
       <td> <button (click)="eliminar(index)">Eliminar</button></td>
     </tr>
+  </tbody>
 </table>
 </div>
