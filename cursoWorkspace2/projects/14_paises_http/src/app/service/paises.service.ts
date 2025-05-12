@@ -16,8 +16,17 @@ url:string="https://restcountries.com/v2/all ";
   }
 
   //metodo que devuelva un observable con un conjunto de string
-  public continentes(continente:string):Observable<string[]>{
-    return this.http.get <Pais[]>(this.url).pipe(map(p=>p.filter));
 
+  public obtenerContinentes(): Observable<string[]> {
+    return this.http.get<Pais[]>(this.url).pipe(
+      map(paises =>
+        Array.from(new Set(paises.map(p => p.region)))
+      )
+    );
+  }
+  public paisesPorContinente(continente: string): Observable<Pais[]> {
+    return this.http.get<Pais[]>(this.url).pipe(
+      map(paises => paises.filter(p => p.region === continente))
+    );
   }
 }

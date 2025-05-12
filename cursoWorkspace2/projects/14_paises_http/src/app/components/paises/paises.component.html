@@ -1,7 +1,15 @@
 <div class="container">
-  <button (click)="verPaises()">Ver Paises </button>
-  <select name="" id=""></select>
-  <table class="table table-striped" *ngIf="paises.length>0">
+
+
+
+Seleccione  temática:
+<select [(ngModel)]="continente" (change)="paisesPorContinente()">
+
+  <option *ngFor="let t of continentes" value="{{t}}">
+    {{t}}
+  </option>
+</select>
+  <table class="table table-striped" *ngIf="resultado">
   <thead>
 <tr>
   <th>Nombre</th>
@@ -12,7 +20,7 @@
   </tr>
 </thead>
 <tbody>
-  <tr *ngFor="let c of paises">
+  <tr *ngFor="let c of resultado">
     <td>{{c.name}}</td>
     <td>{{c.capital}}</td>
     <td>{{c.region}}</td>

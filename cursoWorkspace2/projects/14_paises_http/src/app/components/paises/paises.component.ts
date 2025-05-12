@@ -12,19 +12,27 @@ import { FormsModule } from '@angular/forms';
 })
 export class PaisesComponent {
 paises:Pais[];
-continente:string;
+continentes:string[]=[];
+continente:string="";
+resultado:Pais[];
 
 constructor(private paisesService: PaisesService){
+  this.paisesService.obtenerContinentes().subscribe(d=>this.continentes=d);
 
 }
+
 verPaises():void{
   //en la suscripción al obervable le decimos
   // que tiene que hacer con los datos de respuesta
 this.paisesService.obtenerPaises().subscribe(d=>this.paises=d);
 }
 
-buscarContinente():void{
-  this.verPaises.
+//obtenerContinentes():void{
+// }
+
+paisesPorContinente():void{
+  this.paisesService.paisesPorContinente(this.continente).subscribe(d=>this.resultado=d);
 }
+
 
 }
