@@ -27,8 +27,7 @@ verPaises():void{
 this.paisesService.obtenerPaises().subscribe(d=>this.paises=d);
 }
 
-//obtenerContinentes():void{
-// }
+ 
 
 paisesPorContinente():void{
   this.paisesService.paisesPorContinente(this.continente).subscribe(d=>this.resultado=d);

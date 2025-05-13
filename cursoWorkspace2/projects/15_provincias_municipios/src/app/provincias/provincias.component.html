@@ -1,0 +1,33 @@
+<div class="container  mt-3">
+  <h2>Seleccione Provincia</h2>
+
+<select class="form-select" [(ngModel)]="code"  (change)="municipioProvincia()">
+  <option *ngFor="let t of provincias" value="{{t.CODPROV}}" >
+    {{t.NOMBRE_PROVINCIA}}
+  </option>
+
+
+  </select>
+  <br><br><br>
+  <div *ngIf="municipios">
+    <table border="1">
+      <tr>
+        <th>Municipio </th>
+        <th>Habitantes </th>
+        <th>Superficie </th>
+        <th>Altitud </th>
+      </tr>
+      <tr *ngFor="let m of municipios">
+          <td>{{m.NOMBRE}}</td>
+          <td>{{m.POBLACION_MUNI}}</td>
+          <td>{{m.SUPERFICIE}}</td>
+          <td>{{m.ALTITUD}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+
+

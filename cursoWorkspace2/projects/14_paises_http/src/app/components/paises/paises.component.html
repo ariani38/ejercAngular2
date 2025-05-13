@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container  mt-3">
+  <h2>Seleccione Continente</h2>
+   
 
 
 
-Seleccione  temática:
-<select [(ngModel)]="continente" (change)="paisesPorContinente()">
-
+<select class="form-select" [(ngModel)]="continente" (change)="paisesPorContinente()">
   <option *ngFor="let t of continentes" value="{{t}}">
     {{t}}
   </option>

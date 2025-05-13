@@ -24,9 +24,12 @@ url:string="https://restcountries.com/v2/all ";
       )
     );
   }
+  //aquí tenemos un observable.
+  //  Pipe nos permite llamar a la funcion que necesitemos
+  //
   public paisesPorContinente(continente: string): Observable<Pais[]> {
-    return this.http.get<Pais[]>(this.url).pipe(
-      map(paises => paises.filter(p => p.region === continente))
+    return this.http.get<Pais[]>(this.url)//observable de pais
+    .pipe( map(paises => paises.filter(p => p.region == continente))
     );
   }
 }
