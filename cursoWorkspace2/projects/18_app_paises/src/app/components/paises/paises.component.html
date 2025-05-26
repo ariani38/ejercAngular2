@@ -1,0 +1,31 @@
+<div class="container  mt-3">
+  <h2>Seleccione Continente</h2>
+
+
+
+<select class="form-select" [(ngModel)]="continente" (change)="paisesPorContinente()">
+  <option *ngFor="let t of continentes" value="{{t}}">
+    {{t}}
+  </option>
+</select>
+  <table class="table table-striped" *ngIf="paises">
+  <thead>
+<tr>
+  <th>Nombre</th>
+  <th>Capital</th>
+  <th>Continente</th>
+  <th>Población</th>
+  <th>Bandera</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let c of paises">
+    <td>{{c.nombre}}</td>
+    <td>{{c.capital}}</td>
+    <td>{{c.continente}}</td>
+    <td>{{c.poblacion}}</td>
+    <td><img src="{{c.bandera}}" width="50px"> </td>
+  </tr>
+</tbody>
+</table>
+</div>
