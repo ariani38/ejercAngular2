@@ -12,7 +12,6 @@ url:string="http://localhost:3000/paises/"; //direccion base del servicio
 
   }
 
-
   //metodo que devuelva un observable con un conjunto de string
 
   public obtenerContinentes(): Observable<string[]> {
