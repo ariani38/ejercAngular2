@@ -13,7 +13,6 @@ export class MovimientosService {
 
   alta(movimiento:Movimiento):Observable<any>{
       return this.http.post(this.url+"/alta",movimiento);
-
     }
 
   buscarPorCuenta(idCuenta:number):Observable<Movimiento[]>{

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Movimiento } from '../../../model/Movimiento';
+import { MovimientosService } from '../../service/movimientos.service';
+
 
 @Component({
   selector: 'app-movimiento',
@@ -7,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './movimiento.component.css'
 })
 export class MovimientoComponent {
+
+  movimiento:Movimiento=new Movimiento();
+
+   constructor(private movimientosService:MovimientosService){
+
+    }
+
+
 
 }
