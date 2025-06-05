@@ -1,1 +1,27 @@
-<p>movimiento works!</p>
+<div>
+  Selecciona desde que fecha:
+  <input title="fecha1" type="date" name="fecha1" id="" [(ngModel)]="fecha1" />
+  <br /><br />
+  Selecciona hasta que fecha:
+  <input title="fecha2" type="date" name="fecha1" id="" [(ngModel)]="fecha2" />
+</div>
+<div>
+  <table>
+    <thead>
+      <th>Fecha Incial: {{ fecha1 }}</th>
+      <th>Fecha Final: {{ fecha2 }}</th>
+    </thead>
+    <tbody *ngFor="let m of movimientos">
+      <td>{{ m.fecha| date }}</td>
+      <td>{{ m.cantidad }}</td>
+      <td>{{ m.idCuenta }}</td>
+      <td>{{ m.operacion }}</td>
+    </tbody>
+  </table>
+  <button title="buscar" (click)="buscarFechas()" > BUSCAR </button>
+</div>
+
+
+
+
+
