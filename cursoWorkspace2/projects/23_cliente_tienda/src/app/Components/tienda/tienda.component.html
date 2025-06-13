@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Lista de Productos</h2>
+  <button (click)="mostrar()">Mostrar Productos</button>
+  <table class="table table-bordered" *ngIf="productos && productos.length > 0">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Stock</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of productos">
+        <td>{{ p.producto }}</td>
+        <td>{{ p.precioUnitario  | currency:'EUR' }}</td>
+        <td>{{ p.stock}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="productos && productos.length === 0">
+    No hay productos disponibles.
+  </div>
+</div>
