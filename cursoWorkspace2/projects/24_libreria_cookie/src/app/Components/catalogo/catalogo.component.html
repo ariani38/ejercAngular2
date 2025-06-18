@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Catálogo de Libros</h2>
+  <table class="table table-bordered" *ngIf="libros && libros.length > 0">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Precio</th>
+        <th>ISBN</th> 
+        <th>Páginas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let libro of libros">
+        <td>{{ libro.titulo }}</td>
+        <td>{{ libro.autor }}</td>
+        <td>{{ libro.precio }}</td>
+        <td>{{ libro.isbn }}</td>
+        <td>{{ libro.paginas }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

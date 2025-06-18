@@ -1,0 +1,40 @@
+<div>
+  <form #flogin="ngForm" (ngSubmit)="autenticar()" novalidate>
+    <label for="usuario">Usuario:</label>
+    <input
+      id="usuario"
+      type="text"
+      name="usuario"
+      [(ngModel)]="usuario"
+      #usuarioCtrl="ngModel"
+      required
+      minlength="3"
+    />
+    <div *ngIf="usuarioCtrl.invalid && usuarioCtrl.touched">
+      <small *ngIf="usuarioCtrl.hasError('required')">Usuario requerido.</small>
+      <small *ngIf="usuarioCtrl.hasError('minlength')">Mínimo 3 caracteres.</small>
+    </div>
+
+    <label for="password">Contraseña:</label>
+    <input
+      id="password"
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      #passwordCtrl="ngModel"
+      required
+    />
+    <div *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+      <small *ngIf="passwordCtrl.hasError('required')">Contraseña requerida.</small>
+    </div>
+
+    <button type="submit" [disabled]="flogin.invalid">Validar</button>
+  </form>
+</div>
+
+<div>
+  {{ mensaje }}
+</div>
+
+
+
